@@ -1,0 +1,40 @@
+sudo: required
+
+language: java
+
+jdk:
+  - oraclejdk8
+
+services:
+  - docker
+
+env:
+  DOCKER_COMPOSE_VERSION: 1.14.0-rc2
+  DOCKER_HUB_ID: zhongmingmao
+
+before_install:
+  - "echo skipped"
+
+install:
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+  - cp .travis.settings.xml $HOME/.m2/settings.xml
+
+script:
+  - mvn clean package
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+      sh push_images.sh;
+      fi
+
+after_success:
+  - docker-compose config
+  - docker-compose up -d
+  - docker-compose ps
+  - docker-compose down
+
+notifications:
+  email:
+    recipients:
+      - zhongmingmao0625@gmail.com

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <!-- 敏感信息明文存放在Github的方式并不优雅，应该存放成CI平台上的环境变量（脚本实现）-->
+    <servers>
+        <server>
+            <id>docker-hub</id>
+            <username>zhongmingmao</username>
+            <password>zhongmingmao625</password>
+            <configuration>
+                <email>zhongmingmao@yeah.net</email>
+            </configuration>
+        </server>
+    </servers>
+
+    <profiles>
+        <profile>
+            <id>jdk-1.8</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <jdk>1.8</jdk>
+            </activation>
+            <properties>
+                <maven.compiler.source>1.8</maven.compiler.source>
+                <maven.compiler.target>1.8</maven.compiler.target>
+                <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+            </properties>
+        </profile>
+    </profiles>
+</settings>

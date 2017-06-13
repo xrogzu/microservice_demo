@@ -1,0 +1,6 @@
+version: '2'
+services:
+  eureka_server:
+    image: zhongmingmao/eureka_server:0.0.1-SNAPSHOT
+    ports:
+      - "9000:9000"
