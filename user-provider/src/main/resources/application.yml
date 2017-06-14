@@ -12,6 +12,10 @@ eureka:
   client:
     service-url:
       defaultZone: http://zhongmingmao:zhongmingmao@server1:9001/eureka,http://zhongmingmao:zhongmingmao@server2:9002/eureka,http://zhongmingmao:zhongmingmao@server3:9003/eureka
+  instance:
+    metadata-map: # 自定义元数据
+      author: zhongmingmao
+      location: Zhongshan,Guangdong,China
 
 management:
   security:
