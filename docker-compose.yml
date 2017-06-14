@@ -2,20 +2,20 @@ version: '2'
 
 services:
   eureka-server:
-    image: zhongmingmao/eureka_server:0.0.1-SNAPSHOT
+    image: zhongmingmao/eureka-server:0.0.1-SNAPSHOT
     ports:
       - "9000:9000"
     networks:
       - front-end
       - back-end
   user-provider:
-    image: zhongmingmao/user_provider:0.0.1-SNAPSHOT
+    image: zhongmingmao/user-provider:0.0.1-SNAPSHOT
     networks:
       - back-end
     depends_on:
       - eureka-server
   user-consumer:
-    image: zhongmingmao/user_consumer:0.0.1-SNAPSHOT
+    image: zhongmingmao/user-consumer:0.0.1-SNAPSHOT
     networks:
       - back-end
     depends_on:

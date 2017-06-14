@@ -13,9 +13,9 @@
     </properties>
 
     <modules>
-        <module>eureka_server</module>
-        <module>user_provider</module>
-        <module>user_consumer</module>
+        <module>eureka-server</module>
+        <module>user-provider</module>
+        <module>user-consumer</module>
     </modules>
 
 </project>
