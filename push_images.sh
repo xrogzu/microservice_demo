@@ -1,3 +1,6 @@
+#!/bin/bash
+# push docker images to hub.docker.com
+
 for file in `ls .`
 do
   if [ -d ./$file ]

@@ -1,25 +1,51 @@
 version: '2'
 
 services:
-  eureka-server:
+  server1:
     image: zhongmingmao/eureka-server:0.0.1-SNAPSHOT
     ports:
-      - "9000:9000"
+      - "9001:9001"
     networks:
       - front-end
       - back-end
+    environment:
+      - spring.profiles.active=server1
+  server2:
+    image: zhongmingmao/eureka-server:0.0.1-SNAPSHOT
+    ports:
+      - "9002:9002"
+    networks:
+      - front-end
+      - back-end
+    environment:
+      - spring.profiles.active=server2
+  server3:
+    image: zhongmingmao/eureka-server:0.0.1-SNAPSHOT
+    ports:
+      - "9003:9003"
+    networks:
+      - front-end
+      - back-end
+    environment:
+      - spring.profiles.active=server3
+
   user-provider:
     image: zhongmingmao/user-provider:0.0.1-SNAPSHOT
     networks:
       - back-end
     depends_on:
-      - eureka-server
+      - server1
+      - server2
+      - server3
+
   user-consumer:
     image: zhongmingmao/user-consumer:0.0.1-SNAPSHOT
     networks:
       - back-end
     depends_on:
-      - eureka-server
+      - server1
+      - server2
+      - server3
 
 networks:
   front-end:
