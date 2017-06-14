@@ -9,3 +9,15 @@ eureka:
     register-with-eureka: false # 不向服务注册中心注册自己
     service-url:
       defaultZone: http://eureka-server:${server.port}/eureka
+
+management:
+  security:
+    enabled: false
+
+info:
+  app:
+    name: @project.artifactId@
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@
