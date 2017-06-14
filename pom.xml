@@ -14,6 +14,7 @@
 
     <modules>
         <module>eureka_server</module>
+        <module>user_provider</module>
     </modules>
 
 </project>

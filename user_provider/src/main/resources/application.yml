@@ -1,0 +1,15 @@
+server:
+  port: 0 # 随机端口
+spring:
+  application:
+    name: user_provider
+  profiles:
+    active: dev
+  jpa:
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery:9000/eureka
+
