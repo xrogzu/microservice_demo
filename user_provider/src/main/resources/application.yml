@@ -2,7 +2,7 @@ server:
   port: 0 # 随机端口
 spring:
   application:
-    name: user_provider
+    name: user-provider
   profiles:
     active: dev
   jpa:
@@ -11,5 +11,4 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://discovery:9000/eureka
-
+      defaultZone: http://eureka-server:9000/eureka
