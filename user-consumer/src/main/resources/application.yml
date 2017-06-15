@@ -22,3 +22,9 @@ info:
     java:
       source: @java.version@
       target: @java.version@
+
+# 针对ServiceId配置Ribbon属性
+# org.springframework.cloud.netflix.ribbon.PropertiesFactory
+user-provider:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
