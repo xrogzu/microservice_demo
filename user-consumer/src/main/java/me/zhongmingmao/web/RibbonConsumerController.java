@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
-@RequestMapping("/users")
-public class UserConsumerController {
+@RequestMapping("/ribbon/users")
+public class RibbonConsumerController {
     
     @Autowired
     private RestTemplate restTemplate;
