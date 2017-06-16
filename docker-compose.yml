@@ -30,7 +30,7 @@ services:
   user-consumer:
     image: zhongmingmao/user-consumer:0.0.1-SNAPSHOT
 
-  # Monitor
+  # Hystrix Monitor
   hystrix-dashboard:
     image: zhongmingmao/hystrix-dashboard:0.0.1-SNAPSHOT
     ports:
@@ -52,4 +52,4 @@ services:
   rabbitmq:
     image: rabbitmq:3.6.10-management
     ports:
-      - "15672:15672"
+      - "15673:15672"

@@ -9,3 +9,13 @@ eureka:
   client:
     service-url:
       defaultZone: http://zhongmingmao:zhongmingmao@server1:9001/eureka,http://zhongmingmao:zhongmingmao@server2:9002/eureka,http://zhongmingmao:zhongmingmao@server3:9003/eureka
+
+management:
+  security:
+    enabled: false
+
+zuul:
+  ignored-patterns: /**/admin/** # 忽略所有包含/admin的路径
+  routes:
+    user-consumer: /consumer/**
+  ignored-services: eureka-server,zuul,user-provider,user-consumer # 忽略微服务，'*'代表所有微服务
