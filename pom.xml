@@ -17,6 +17,7 @@
         <module>user-provider</module>
         <module>user-consumer</module>
         <module>hystrix-dashboard</module>
+        <module>turbine</module>
     </modules>
 
 </project>

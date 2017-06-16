@@ -32,7 +32,12 @@ services:
   hystrix-dashboard:
     image: zhongmingmao/hystrix-dashboard:0.0.1-SNAPSHOT
     ports:
-      - "8000:8000"
+      - "9200:9200"
+    networks:
+      - front-end
+
+  turbine:
+    image: zhongmingmao/turbine:0.0.1-SNAPSHOT
     networks:
       - front-end
       - back-end
@@ -41,19 +46,11 @@ services:
     image: zhongmingmao/user-provider:0.0.1-SNAPSHOT
     networks:
       - back-end
-    depends_on:
-      - server1
-      - server2
-      - server3
 
   user-consumer:
     image: zhongmingmao/user-consumer:0.0.1-SNAPSHOT
     networks:
       - back-end
-    depends_on:
-      - server1
-      - server2
-      - server3
 
 networks:
   front-end:
