@@ -42,6 +42,12 @@ services:
       - front-end
       - back-end
 
+  turbine-rabbitmq:
+    image: zhongmingmao/turbine-rabbitmq:0.0.1-SNAPSHOT
+    networks:
+      - front-end
+      - rabbitmq-net
+
   user-provider:
     image: zhongmingmao/user-provider:0.0.1-SNAPSHOT
     networks:
@@ -51,9 +57,19 @@ services:
     image: zhongmingmao/user-consumer:0.0.1-SNAPSHOT
     networks:
       - back-end
+      - rabbitmq-net
+
+  rabbitmq:
+    image: rabbitmq:3.6.10-management
+    ports:
+      - "15672:15672"
+    networks:
+      - rabbitmq-net
 
 networks:
   front-end:
     driver: bridge
   back-end:
+    driver: bridge
+  rabbitmq-net:
     driver: bridge
