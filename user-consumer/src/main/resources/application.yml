@@ -37,6 +37,8 @@ feign:
       mime-types: text/xml, application/xml, application/json
     response:
       enabled: true
+  hystrix:
+    enabled: true # 从Dalston版本开始需要显式开启
 
 logging:
   level:
