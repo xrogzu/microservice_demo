@@ -1,75 +1,55 @@
 version: '2'
 
 services:
+  # Discovery Server
   server1:
     image: zhongmingmao/eureka-server:0.0.1-SNAPSHOT
     ports:
       - "9001:9001"
-    networks:
-      - front-end
-      - back-end
     environment:
       - spring.profiles.active=server1
+
   server2:
     image: zhongmingmao/eureka-server:0.0.1-SNAPSHOT
     ports:
       - "9002:9002"
-    networks:
-      - front-end
-      - back-end
     environment:
       - spring.profiles.active=server2
+
   server3:
     image: zhongmingmao/eureka-server:0.0.1-SNAPSHOT
     ports:
       - "9003:9003"
-    networks:
-      - front-end
-      - back-end
     environment:
       - spring.profiles.active=server3
 
+  # Micro Service
+  user-provider:
+    image: zhongmingmao/user-provider:0.0.1-SNAPSHOT
+
+  user-consumer:
+    image: zhongmingmao/user-consumer:0.0.1-SNAPSHOT
+
+  # Monitor
   hystrix-dashboard:
     image: zhongmingmao/hystrix-dashboard:0.0.1-SNAPSHOT
     ports:
       - "9200:9200"
-    networks:
-      - front-end
 
   turbine:
     image: zhongmingmao/turbine:0.0.1-SNAPSHOT
-    networks:
-      - front-end
-      - back-end
 
   turbine-rabbitmq:
     image: zhongmingmao/turbine-rabbitmq:0.0.1-SNAPSHOT
-    networks:
-      - front-end
-      - rabbitmq-net
 
-  user-provider:
-    image: zhongmingmao/user-provider:0.0.1-SNAPSHOT
-    networks:
-      - back-end
+  # Gateway
+  zuul:
+    image: zhongmingmao/zuul:0.0.1-SNAPSHOT
+    ports:
+      - "9300:9300"
 
-  user-consumer:
-    image: zhongmingmao/user-consumer:0.0.1-SNAPSHOT
-    networks:
-      - back-end
-      - rabbitmq-net
-
+  # MQ
   rabbitmq:
     image: rabbitmq:3.6.10-management
     ports:
       - "15672:15672"
-    networks:
-      - rabbitmq-net
-
-networks:
-  front-end:
-    driver: bridge
-  back-end:
-    driver: bridge
-  rabbitmq-net:
-    driver: bridge

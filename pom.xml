@@ -19,6 +19,7 @@
         <module>hystrix-dashboard</module>
         <module>turbine</module>
         <module>turbine-rabbitmq</module>
+        <module>zuul</module>
     </modules>
 
 </project>

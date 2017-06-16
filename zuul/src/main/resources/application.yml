@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: zuul
+
+server:
+  port: 9300
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://zhongmingmao:zhongmingmao@server1:9001/eureka,http://zhongmingmao:zhongmingmao@server2:9002/eureka,http://zhongmingmao:zhongmingmao@server3:9003/eureka
