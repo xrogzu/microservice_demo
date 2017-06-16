@@ -29,6 +29,14 @@ services:
     environment:
       - spring.profiles.active=server3
 
+  hystrix-dashboard:
+    image: zhongmingmao/hystrix-dashboard:0.0.1-SNAPSHOT
+    ports:
+      - "8000:8000"
+    networks:
+      - front-end
+      - back-end
+
   user-provider:
     image: zhongmingmao/user-provider:0.0.1-SNAPSHOT
     networks:
