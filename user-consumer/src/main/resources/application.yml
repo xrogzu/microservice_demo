@@ -37,3 +37,7 @@ feign:
       mime-types: text/xml, application/xml, application/json
     response:
       enabled: true
+
+logging:
+  level:
+    me.zhongmingmao.feign.UserFeignClient: debug # feign.Logger.Level只对debug级别响应
