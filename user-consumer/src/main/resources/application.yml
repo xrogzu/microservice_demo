@@ -1,5 +1,6 @@
 server:
   port: 0 # 随机端口
+
 spring:
   rabbitmq:
     host: rabbitmq

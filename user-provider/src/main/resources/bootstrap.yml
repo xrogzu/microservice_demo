@@ -15,6 +15,11 @@ spring:
       fail-fast: true # 为检测到config-server，快速失败
   profiles:
     active: ${cloud.env}
+  zipkin:
+    base-url: http://zipkin-server:9400
+  sleuth:
+    sampler:
+      percentage: 1.0 # 采样比例，默认0.1
 
 eureka:
   client:
