@@ -33,7 +33,7 @@ after_success:
   - docker-compose up -d
   - sh sleep.sh
   - docker-compose ps
-  - docker-compose scale user-provider=2 user-consumer=2 config-server=2
+  - docker-compose scale user-provider=1 user-consumer=1 config-server=1
   - docker-compose ps
   - docker-compose down
 

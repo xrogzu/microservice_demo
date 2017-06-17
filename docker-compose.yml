@@ -48,10 +48,15 @@ services:
     image: zhongmingmao/config-server:0.0.1-SNAPSHOT
 
   # Trace
-  zipkin-server:
-    image: zhongmingmao/zipkin-server:0.0.1-SNAPSHOT
+#  zipkin-server:
+#    image: zhongmingmao/zipkin-server:0.0.1-SNAPSHOT
+#    ports:
+#      - "9400:9400"
+
+  zipkin-server-rabbitmq:
+    image: zhongmingmao/zipkin-server-rabbitmq:0.0.1-SNAPSHOT
     ports:
-      - "9400:9400"
+      - "9410:9410"
 
   # MQ
   rabbitmq:
