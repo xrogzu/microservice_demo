@@ -31,7 +31,9 @@ script:
 after_success:
   - docker-compose config
   - docker-compose up -d
-  - docker-compose scale user-provider=2 user-consumer=2
+  - sh sleep.sh
+  - docker-compose ps
+  - docker-compose scale user-provider=2 user-consumer=2 config-server=2
   - docker-compose ps
   - docker-compose down
 

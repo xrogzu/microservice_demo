@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://git.coding.net/zhongmingmao_coding/microservice-config.git
+          search-paths: /
+          username: zhongmingmao@yeah.net
+          password: Test1234
+          clone-on-start: true # config-server启动时clone Git仓库，快速校验仓库是否有效
+
+server:
+  port: 0
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://zhongmingmao:zhongmingmao@server1:9001/eureka,http://zhongmingmao:zhongmingmao@server2:9002/eureka,http://zhongmingmao:zhongmingmao@server3:9003/eureka

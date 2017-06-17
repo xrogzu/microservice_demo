@@ -26,6 +26,8 @@ services:
   # Micro Service
   user-provider:
     image: zhongmingmao/user-provider:0.0.1-SNAPSHOT
+    environment:
+      - cloud.env=dev # 指定获取哪一个环境的配置
 
   user-consumer:
     image: zhongmingmao/user-consumer:0.0.1-SNAPSHOT
@@ -47,6 +49,10 @@ services:
     image: zhongmingmao/zuul:0.0.1-SNAPSHOT
     ports:
       - "9300:9300"
+
+  # Config Server
+  config-server:
+    image: zhongmingmao/config-server:0.0.1-SNAPSHOT
 
   # MQ
   rabbitmq:
