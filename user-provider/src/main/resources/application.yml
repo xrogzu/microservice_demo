@@ -4,9 +4,6 @@ server:
     show-sql: true
 
 eureka:
-  client:
-    healthcheck:
-      enabled: true
   instance:
     metadata-map: # 自定义元数据
       author: zhongmingmao
@@ -23,3 +20,10 @@ info:
     java:
       source: @java.version@
       target: @java.version@
+
+spring:
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest

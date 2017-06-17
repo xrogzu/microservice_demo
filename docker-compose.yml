@@ -16,13 +16,6 @@ services:
     environment:
       - spring.profiles.active=server2
 
-  server3:
-    image: zhongmingmao/eureka-server:0.0.1-SNAPSHOT
-    ports:
-      - "9003:9003"
-    environment:
-      - spring.profiles.active=server3
-
   # Micro Service
   user-provider:
     image: zhongmingmao/user-provider:0.0.1-SNAPSHOT

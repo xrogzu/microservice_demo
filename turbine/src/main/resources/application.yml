@@ -8,7 +8,7 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://zhongmingmao:zhongmingmao@server1:9001/eureka,http://zhongmingmao:zhongmingmao@server2:9002/eureka,http://zhongmingmao:zhongmingmao@server3:9003/eureka
+      defaultZone: http://zhongmingmao:zhongmingmao@server1:9001/eureka,http://zhongmingmao:zhongmingmao@server2:9002/eureka
 
 turbine:
   app-config: user-consumer # 通过Eureka发现user-consumer的多个实例，然后聚合监控这些实例上的/hystrix.stream

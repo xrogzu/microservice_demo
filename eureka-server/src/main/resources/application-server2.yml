@@ -10,5 +10,5 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: http://zhongmingmao:zhongmingmao@server1:9001/eureka,http://zhongmingmao:zhongmingmao@server3:9003/eureka
+      defaultZone: http://zhongmingmao:zhongmingmao@server1:9001/eureka
 
