@@ -5,6 +5,8 @@ spring:
     name: user-provider
   cloud:
     config:
+      username: zhongmingmao
+      password: zhongmingmao
       profile: ${cloud.env}
       label: master
       discovery:

@@ -46,3 +46,9 @@ info:
     java:
       source: @java.version@
       target: @java.version@
+security:
+  basic:
+    enabled: true
+  user:
+    name: zhongmingmao
+    password: zhongmingmao
