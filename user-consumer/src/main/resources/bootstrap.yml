@@ -1,0 +1,22 @@
+cloud.env: dev
+# bootstrap.yml中的属性高于application*.yml，默认情况下不能被本地配置覆盖
+spring:
+  application:
+    name: user-consumer
+  cloud:
+    config:
+      username: zhongmingmao
+      password: zhongmingmao
+      profile: ${cloud.env}
+      label: master
+      discovery:
+        enabled: true
+        service-id: config-server
+      fail-fast: true # 为检测到config-server，快速失败
+  profiles:
+    active: ${cloud.env}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://zhongmingmao:zhongmingmao@server1:9001/eureka,http://zhongmingmao:zhongmingmao@server2:9002/eureka

@@ -1,32 +1,15 @@
 server:
   port: 0 # 随机端口
 spring:
-  application:
-    name: user-consumer
   rabbitmq:
     host: rabbitmq
     port: 5672
     username: guest
     password: guest
 
-eureka:
-  client:
-    healthcheck:
-      enabled: true
-    service-url:
-      defaultZone: http://zhongmingmao:zhongmingmao@server1:9001/eureka,http://zhongmingmao:zhongmingmao@server2:9002/eureka
-
 management:
   security:
     enabled: false
-
-info:
-  app:
-    name: @project.artifactId@
-    encoding: @project.build.sourceEncoding@
-    java:
-      source: @java.version@
-      target: @java.version@
 
 # 针对ServiceId配置Ribbon属性
 # org.springframework.cloud.netflix.ribbon.PropertiesFactory
@@ -48,3 +31,11 @@ feign:
 logging:
   level:
     me.zhongmingmao.feign.UserFeignClient: debug # feign.Logger.Level只对debug级别响应
+
+info:
+  app:
+    name: @project.artifactId@
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@
