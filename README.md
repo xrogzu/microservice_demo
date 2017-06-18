@@ -10,6 +10,7 @@ _**`Simple Practice`**_ With `Spring Cloud` & `Docker` & `Travis CI`
 ## 3. Travis CI Strategy
 
 ![travis_ci_strategy](http://orqfdhddb.bkt.clouddn.com/travis_ci_strategy.png)
+[travis_ci_strategy](http://orqfdhddb.bkt.clouddn.com/travis_ci_strategy.png)
 
 ## 5. Verification
 
@@ -74,6 +75,7 @@ f526f7d0f524        zhongmingmao/eureka-server:0.0.1-SNAPSHOT   "java -jar -Xms5
 ```
 http://localhost:9001/ or http://localhost:9002/
 ![start_eureka](http://orqfdhddb.bkt.clouddn.com/start_eureka.png)
+[start_eureka](http://orqfdhddb.bkt.clouddn.com/start_eureka.png)
 
 ### 5.2 Start Config-Server
 ```
@@ -88,6 +90,7 @@ f526f7d0f524        zhongmingmao/eureka-server:0.0.1-SNAPSHOT   "java -jar -Xms5
 ```
 http://localhost:9001/ or http://localhost:9002/
 ![start_config-server](http://orqfdhddb.bkt.clouddn.com/start_config-server.png)
+[start_config-server](http://orqfdhddb.bkt.clouddn.com/start_config-server.png)
 
 ### 5.3 Start User-Provider & & User-Consumer
 ```
@@ -109,6 +112,7 @@ b6f610693a08        zhongmingmao/user-provider:0.0.1-SNAPSHOT   "java -jar -Xms5
 ```
 http://localhost:9001/ or http://localhost:9002/
 ![start_provider-consumer](http://orqfdhddb.bkt.clouddn.com/start_provider-consumer.png)
+[start_provider-consumer](http://orqfdhddb.bkt.clouddn.com/start_provider-consumer.png)
 
 ### 5.4 Verify Ribbon & Feign
 ```
@@ -167,12 +171,15 @@ ed0266db8d41        zhongmingmao/user-consumer:0.0.1-SNAPSHOT       "java -jar -
 
 http://localhost:9001/ or http://localhost:9002/
 ![start_turbine_hystrix-dashboard](http://orqfdhddb.bkt.clouddn.com/start_turbine_hystrix-dashboard.png)
+[start_turbine_hystrix-dashboard](http://orqfdhddb.bkt.clouddn.com/start_turbine_hystrix-dashboard.png)
 
 http://localhost:9200/hystrix
 ![hystrix-dashboard-turbine](http://orqfdhddb.bkt.clouddn.com/hystrix-dashboard-turbine.png)
+[hystrix-dashboard-turbine](http://orqfdhddb.bkt.clouddn.com/hystrix-dashboard-turbine.png)
 
 Monitor  http://740209258c6f:9100/turbine.stream
 ![hystrix-dashboard-turbine-stream](http://orqfdhddb.bkt.clouddn.com/hystrix-dashboard-turbine-stream.png)
+[hystrix-dashboard-turbine-stream](http://orqfdhddb.bkt.clouddn.com/hystrix-dashboard-turbine-stream.png)
 
 
 ### 5.7 Start RabbitMQ
@@ -214,9 +221,11 @@ ed0266db8d41        zhongmingmao/user-consumer:0.0.1-SNAPSHOT       "java -jar -
 
 http://localhost:9200/hystrix
 ![hystrix-dashboard-turbine_rabbitmq](http://orqfdhddb.bkt.clouddn.com/hystrix-dashboard-turbine_rabbitmq.png)
+[hystrix-dashboard-turbine_rabbitmq](http://orqfdhddb.bkt.clouddn.com/hystrix-dashboard-turbine_rabbitmq.png)
 
 Monitor  http://248a45a932b5:9110/turbine.stream
 ![hystrix-dashboard-turbine_rabbitmq-stream](http://orqfdhddb.bkt.clouddn.com/hystrix-dashboard-turbine_rabbitmq-stream.png)
+[hystrix-dashboard-turbine_rabbitmq-stream](http://orqfdhddb.bkt.clouddn.com/hystrix-dashboard-turbine_rabbitmq-stream.png)
 
 ```
 $ docker-compose stop turbine  turbine-rabbitmq hystrix-dashboard
@@ -358,9 +367,11 @@ $ docker exec ed0266db8d41 curl http://ed0266db8d41:37015/feign/users/1
 
 http://localhost:9410
 ![zipkin-server-rabbitmq](http://orqfdhddb.bkt.clouddn.com/zipkin-server-rabbitmq.png)
+[zipkin-server-rabbitmq](http://orqfdhddb.bkt.clouddn.com/zipkin-server-rabbitmq.png)
 
 Trace
 ![zipkin-server-rabbitmq-trace](http://orqfdhddb.bkt.clouddn.com/zipkin-server-rabbitmq-trace.png)
+[zipkin-server-rabbitmq-trace](http://orqfdhddb.bkt.clouddn.com/zipkin-server-rabbitmq-trace.png)
 
 ## 6. Todo List
 
