@@ -28,8 +28,8 @@ spring:
     username: guest
     password: guest
 
-logging:
-  level:
-    root: info
-    org.springframework.web.servlet.DispatcherServlet: debug
-    org.springframework.cloud.sleuth: debug
+#logging:
+#  level:
+#    root: info
+#    org.springframework.web.servlet.DispatcherServlet: debug
+#    org.springframework.cloud.sleuth: debug

@@ -29,12 +29,12 @@ feign:
   hystrix:
     enabled: true # 从Dalston版本开始需要显式开启
 
-logging:
-  level:
-    root: info
-    me.zhongmingmao.feign.UserFeignClient: debug # feign.Logger.Level只对debug级别响应
-    org.springframework.web.servlet.DispatcherServlet: debug
-    org.springframework.cloud.sleuth: debug
+#logging:
+#  level:
+#    root: info
+#    me.zhongmingmao.feign.UserFeignClient: debug # feign.Logger.Level只对debug级别响应
+#    org.springframework.web.servlet.DispatcherServlet: debug
+#    org.springframework.cloud.sleuth: debug
 
 info:
   app:
